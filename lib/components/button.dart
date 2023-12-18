@@ -1,3 +1,4 @@
+import 'package:eis/theme/colors.dart';
 import 'package:flutter/material.dart';
 
 class MyButton extends StatelessWidget {
@@ -15,7 +16,7 @@ class MyButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
         decoration: BoxDecoration(
-          color: Color.fromARGB(123, 48, 28, 25),
+          color: secondaryColor,
           borderRadius: BorderRadius.circular(40),
         ),
         padding: EdgeInsets.all(20),

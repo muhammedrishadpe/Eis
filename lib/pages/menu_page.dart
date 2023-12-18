@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../components/Ice_tile.dart';
+import 'food_details_page.dart';
 
 class MenuPage extends StatelessWidget {
   const MenuPage({super.key});
@@ -34,6 +35,17 @@ class MenuPage extends StatelessWidget {
           imagePath: "lib/images/ice-cream(1).png",
           rating: "3.5"),
     ];
+
+    // navigation to food item details page
+
+    void navigateToFoodDetails(int index) {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => FoodDetailPage(
+                    eis: iceMenu[index],
+                  )));
+    }
 
     return Scaffold(
       backgroundColor: Colors.grey[300],
@@ -135,6 +147,7 @@ class MenuPage extends StatelessWidget {
               itemCount: iceMenu.length,
               itemBuilder: (context, index) => IceTile(
                 eis: iceMenu[index],
+                onTap: () => navigateToFoodDetails(index),
               ),
             ),
           ),

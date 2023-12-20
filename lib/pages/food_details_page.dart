@@ -130,7 +130,7 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
           // price + quantity + add to cart button
           Container(
             color: primaryColor,
-            padding: EdgeInsets.all(25),
+            padding: const EdgeInsets.all(25),
             child: Column(
               children: [
                 // price + quantity
@@ -139,7 +139,7 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                     // price
                     Text(
                       "\$" + widget.eis.price,
-                      style: TextStyle(
+                      style: const TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
                           fontSize: 18),
@@ -156,7 +156,7 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                             shape: BoxShape.circle,
                           ),
                           child: IconButton(
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.remove,
                             ),
                             color: Colors.white,
@@ -167,7 +167,7 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                         ,
                         Text(
                           quantityCount.toString(),
-                          style: TextStyle(
+                          style: const TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
                             fontSize: 18,
@@ -181,7 +181,7 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                             shape: BoxShape.circle,
                           ),
                           child: IconButton(
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.add,
                             ),
                             color: Colors.white,

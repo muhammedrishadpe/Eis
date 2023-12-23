@@ -1,4 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:eis/components/button.dart';
 import 'package:eis/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -24,7 +25,9 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
 // decrement quantity
   void decrementQuantity() {
     setState(() {
-      quantityCount--;
+      if (quantityCount > 0) {
+        quantityCount--;
+      }
     });
   }
 
@@ -34,6 +37,9 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
       quantityCount++;
     });
   }
+
+  // Add to cart
+  void addToCart() {}
 
   @override
   Widget build(BuildContext context) {
@@ -135,6 +141,7 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
               children: [
                 // price + quantity
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     // price
                     Text(
@@ -163,14 +170,19 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                             onPressed: decrementQuantity,
                           ),
                         )
-                        // quantity button
+                        // quantity count
                         ,
-                        Text(
-                          quantityCount.toString(),
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
+                        SizedBox(
+                          width: 40,
+                          child: Center(
+                            child: Text(
+                              quantityCount.toString(),
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18,
+                              ),
+                            ),
                           ),
                         ),
                         //plus button
@@ -192,8 +204,14 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                     )
                   ],
                 ),
-
+                const SizedBox(
+                  height: 25,
+                ),
                 // add to cart button
+                MyButton(
+                  text: "in den einkaufswagen",
+                  onTap: addToCart,
+                ),
               ],
             ),
           ),

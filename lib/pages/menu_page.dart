@@ -27,12 +27,12 @@ class MenuPage extends StatelessWidget {
       Eis(
           name: "Eis Fontanella",
           price: "4.30",
-          imagePath: "lib/images/ice-cream(1).png",
+          imagePath: "lib/images/ice-cream(3).png",
           rating: "4.5"),
       Eis(
           name: "Leopold's",
           price: "3.85",
-          imagePath: "lib/images/ice-cream(1).png",
+          imagePath: "lib/images/ice-cream(4).png",
           rating: "3.5"),
     ];
 

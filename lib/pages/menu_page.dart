@@ -1,9 +1,9 @@
 import 'package:eis/components/button.dart';
-import 'package:eis/models/Eis.dart';
+// import 'package:eis/models/Eis.dart';
 import 'package:eis/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import '../models/shop.dart';
 import '../components/Ice_tile.dart';
 import 'food_details_page.dart';
 
@@ -12,38 +12,14 @@ class MenuPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Eis menu
-    List iceMenu = [
-      Eis(
-          name: "Dei Ners",
-          price: "3.10",
-          imagePath: "lib/images/ice-cream(1).png",
-          rating: "4.9"),
-      Eis(
-          name: "Glolitti",
-          price: "4.10",
-          imagePath: "lib/images/ice-cream(2).png",
-          rating: "5"),
-      Eis(
-          name: "Eis Fontanella",
-          price: "4.30",
-          imagePath: "lib/images/ice-cream(3).png",
-          rating: "4.5"),
-      Eis(
-          name: "Leopold's",
-          price: "3.85",
-          imagePath: "lib/images/ice-cream(4).png",
-          rating: "3.5"),
-    ];
-
     // navigation to food item details page
-
+    var shop = Shop();
     void navigateToFoodDetails(int index) {
       Navigator.push(
           context,
           MaterialPageRoute(
               builder: (context) => FoodDetailPage(
-                    eis: iceMenu[index],
+                    eis: shop.iceMenu[index],
                   )));
     }
 
@@ -144,9 +120,9 @@ class MenuPage extends StatelessWidget {
           Expanded(
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
-              itemCount: iceMenu.length,
+              itemCount: shop.iceMenu.length,
               itemBuilder: (context, index) => IceTile(
-                eis: iceMenu[index],
+                eis: shop.iceMenu[index],
                 onTap: () => navigateToFoodDetails(index),
               ),
             ),
